@@ -1,0 +1,306 @@
+# X-Template V.0.0.0-Genesis
+
+> Cyberpunk Glassmorphism starter template — React + TypeScript + Vite
+
+[![Deploy to GitHub Pages](https://github.com/Ex2-Axon/x-template/actions/workflows/deploy.yml/badge.svg)](https://github.com/Ex2-Axon/x-template/actions/workflows/deploy.yml)
+[![Bluesky](https://img.shields.io/badge/Bluesky-%40microtronic.bsky.social-0085ff?logo=bluesky&logoColor=white)](https://bsky.app/profile/microtronic.bsky.social)
+
+**Live demo:** https://ex2-axon.github.io/x-template/
+
+![Screenshot](screenshot.png)
+
+---
+
+## Stack
+
+| | |
+|---|---|
+| **Framework** | React 19 + TypeScript |
+| **Build tool** | Vite 8 |
+| **Styling** | CSS (Glassmorphism + Neon) + Tailwind CSS 4 |
+| **Package manager** | pnpm |
+| **Deploy** | GitHub Pages (auto on push) |
+
+---
+
+## Features
+
+- Cyberpunk glassmorphism UI with full animation
+- Neon glow effects — cyan, pink, purple, green
+- Animated grid background + floating particles
+- Glitch text effect on title
+- Scanline CRT overlay
+- Orbit rings on hero image
+- Staggered entrance animations
+- Auto-deploy to GitHub Pages on push
+- Auto-post to Discord, Bluesky, X on push
+
+---
+
+## Getting Started
+
+```bash
+# Install dependencies
+pnpm install
+
+# Start dev server
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Preview production build
+pnpm preview
+```
+
+---
+
+## GitHub Actions Workflows
+
+| Workflow | Trigger | Description |
+|---|---|---|
+| `deploy.yml` | push to main | Build & deploy to GitHub Pages |
+| `discord-notify.yml` | push to main | Send release embed to Discord |
+| `bluesky-notify.yml` | push to main | Post release to Bluesky |
+| `x-notify.yml` | push to main | Post release to X (Twitter) |
+
+### Required Secrets
+
+Go to **Settings → Secrets and variables → Actions** and add:
+
+| Secret | Description |
+|---|---|
+| `DISCORD_WEBHOOK_URL` | Discord webhook URL |
+| `BSKY_IDENTIFIER` | Bluesky handle (e.g. `microtronic.bsky.social`) |
+| `BSKY_APP_PASSWORD` | Bluesky app password |
+| `X_API_KEY` | X Consumer Key |
+| `X_API_SECRET` | X Consumer Secret |
+| `X_ACCESS_TOKEN` | X Access Token |
+| `X_ACCESS_TOKEN_SECRET` | X Access Token Secret |
+
+---
+
+## Project Structure
+
+```
+x-template/
+├── .github/
+│   └── workflows/
+│       ├── deploy.yml
+│       ├── discord-notify.yml
+│       ├── bluesky-notify.yml
+│       └── x-notify.yml
+├── public/
+│   ├── favicon.svg
+│   └── icons.svg
+├── src/
+│   ├── assets/
+│   ├── App.tsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.tsx
+├── package.json
+└── vite.config.ts
+```
+
+---
+
+## Connect
+
+- Bluesky: [@microtronic.bsky.social](https://bsky.app/profile/microtronic.bsky.social)
+- Discord: [Join server](https://discord.gg/8Zeq8VCU)
+- GitHub: [Ex2-Axon](https://github.com/Ex2-Axon)
+
+## Generation Prompt
+```text
+You are building a daily UI project. Below is the theme specification for today.
+
+## Theme Context (daily-context.json)
+```json
+{
+  "day": 48,
+  "date": "2026-05-31",
+  "version": "1.48.0",
+  "project_name": "x-template-048",
+  "theme": {
+    "name": "Neon Noir",
+    "style": "neon-noir",
+    "mood": "gritty, electric, mysterious, dark"
+  },
+  "palette": {
+    "background": "#050505",
+    "surface": "#0f0f0f",
+    "primary": "#ff006e",
+    "accent": "#00f5ff",
+    "text": "#cccccc",
+    "muted": "#333333"
+  },
+  "typography": {
+    "heading": "Bebas Neue",
+    "body": "Rajdhani",
+    "size": "large"
+  },
+  "layout": {
+    "structure": "centered",
+    "density": "normal",
+    "border_style": "neon glow border"
+  },
+  "animation": {
+    "level": "moderate",
+    "style": "flicker, pulse, rain"
+  },
+  "components": {
+    "hero_text": "NOIR",
+    "subtitle": "The city never sleeps.",
+    "button_label": "ENTER_",
+    "badge_text": "DISTRICT 7 — LIVE"
+  },
+  "commit_message": "feat: UI Day 48 — Neon Noir [fallback]",
+  "source": "fallback",
+  "selected_component": {
+    "category": "Checkboxes",
+    "component": "Jack17432_shaggy-earwig-15.html",
+    "path": "C:\\Users\\User\\Documents\\GitHub\\Axon\\x-components\\Checkboxes\\Jack17432_shaggy-earwig-15.html",
+    "content": "<label for=\"check\" class=\"menuButton\">\n    <input id=\"check\" type=\"checkbox\">\n    <span class=\"top\"></span>\n    <span class=\"mid\"></span>\n    <span class=\"bot\"></span>\n</label>\n<style>\n/* Tags: glassmorphism, checkbox, hamburger, shadow */\n/* \nButton insperation \nMenu icon transofmation insperation Tahmazi99\n*/\n.menuButton {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  gap: 13%;\n  color: #090909;\n  width: 3.5em;\n  height: 3.5em;\n  border-radius: 0.5em;\n  background: #e8e8e8;\n  border: 1px solid #e8e8e8;\n  transition: all .3s;\n  box-shadow: 6px 6px 12px #c5c5c5,\n             -6px -6px 12px #ffffff;\n}\n\n.menuButton:hover {\n  border: 1px solid white;\n}\n\n.menuButton:active {\n  color: #666;\n  box-shadow: inset 4px 4px 12px #c5c5c5,\n             inset -4px -4px 12px #ffffff;\n}\n\ninput[type = \"checkbox\"] {\n  -webkit-appearance: none;\n  display: none;\n  visibility: hidden;\n}\n\n.menuButton span {\n  width: 30px;\n  height: 4px;\n  background: #131313;\n  border-radius: 100px;\n  transition: 0.3s ease;\n}\n\ninput[type]:checked ~ span.top {\n  transform: translateY(290%)rotate(45deg);\n  width: 40px;\n}\n\ninput[type]:checked ~ span.bot {\n  transform: translateY(-270%) rotate(-45deg);\n  width: 40px;\n  box-shadow: 0 0 10px #495057;\n}\n\ninput[type]:checked ~ span.mid {\n  transform: translateX(-20px);\n  opacity: 0;\n}\n</style>"
+  }
+}
+```
+
+## Selected Component Reference
+- Category: Checkboxes
+- Component: Jack17432_shaggy-earwig-15.html
+- Path: C:\Users\User\Documents\GitHub\Axon\x-components\Checkboxes\Jack17432_shaggy-earwig-15.html
+
+Use the selected component HTML below as the primary design reference for the new UI. Keep the structure and styling assumptions in mind while rewriting the requested files.
+```html
+<label for="check" class="menuButton">
+    <input id="check" type="checkbox">
+    <span class="top"></span>
+    <span class="mid"></span>
+    <span class="bot"></span>
+</label>
+<style>
+/* Tags: glassmorphism, checkbox, hamburger, shadow */
+/* 
+Button insperation 
+Menu icon transofmation insperation Tahmazi99
+*/
+.menuButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 13%;
+  color: #090909;
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all .3s;
+  box-shadow: 6px 6px 12px #c5c5c5,
+             -6px -6px 12px #ffffff;
+}
+
+.menuButton:hover {
+  border: 1px solid white;
+}
+
+.menuButton:active {
+  color: #666;
+  box-shadow: inset 4px 4px 12px #c5c5c5,
+             inset -4px -4px 12px #ffffff;
+}
+
+input[type = "checkbox"] {
+  -webkit-appearance: none;
+  display: none;
+  visibility: hidden;
+}
+
+.menuButton span {
+  width: 30px;
+  height: 4px;
+  background: #131313;
+  border-radius: 100px;
+  transition: 0.3s ease;
+}
+
+input[type]:checked ~ span.top {
+  transform: translateY(290%)rotate(45deg);
+  width: 40px;
+}
+
+input[type]:checked ~ span.bot {
+  transform: translateY(-270%) rotate(-45deg);
+  width: 40px;
+  box-shadow: 0 0 10px #495057;
+}
+
+input[type]:checked ~ span.mid {
+  transform: translateX(-20px);
+  opacity: 0;
+}
+</style>
+```
+
+## Your Task
+Completely redesign the UI by rewriting these three files from scratch:
+- `src/App.tsx`
+- `src/App.css`
+- `src/index.css`
+
+## Rules for App.tsx
+1. Keep ALL existing imports:
+   - `import { useState, useEffect, useRef } from 'react'`
+   - `import reactLogo from './assets/react.svg'`
+   - `import viteLogo from './assets/vite.svg'`
+   - `import heroImg from './assets/hero.png'`
+   - `import './App.css'`
+2. Keep the `CounterNum` component (useRef + useEffect animation)
+3. Keep the counter button with `onClick` / `setCount` handler
+4. Keep the Documentation section (Vite/React links)
+5. Keep the Social section (GitHub/Discord/X/Bluesky links + SVG icons)
+6. Do NOT use CSS custom properties (`--var-name`) in inline `style` attributes - TypeScript will error
+
+## Rules for CSS
+- Apply the palette, typography, layout structure, animation level, and component text from the JSON above
+- Use Google Fonts via `@import` in `index.css`
+- Match the theme mood: gritty, electric, mysterious, dark
+
+## Mandatory Requirements (apply to every build)
+
+### 1. Responsive - Mobile First
+- Design for mobile (320px) first, scale up with `min-width` breakpoints
+- Touch targets minimum 44x44px
+- No horizontal scroll on any screen size
+- Fluid typography: use `clamp()` or responsive units (`rem`, `%`, `vw`)
+- Images and layout must reflow gracefully at 320px, 768px, 1280px
+
+### 2. Footer Copyright
+- The page MUST have a `<footer>` at the bottom
+- Footer text: `© 2026 Microtronic Co., Ltd. All rights reserved. Credit By Axon.`
+- Legal: [Privacy Policy](https://microtronic-thailand.github.io/privacy-policy/?lang=en)
+- Style the footer to match the theme palette (muted text on surface background)
+
+### 3. SEO Standards
+- `index.html` must have a descriptive `<title>`: `NOIR - Neon Noir | Microtronic`
+- Add `<meta name="description">` with the subtitle: `The city never sleeps.`
+- Add `<meta name="keywords">` relevant to the theme
+- Add Open Graph tags: `og:title`, `og:description`, `og:type` (website)
+- All images must have meaningful `alt` attributes
+- Use semantic HTML: `<header>`, `<main>`, `<section>`, `<footer>`, `<nav>` where appropriate
+- Heading hierarchy: one `<h1>` (hero), `<h2>` for sections - no skipping levels
+
+### 4. Extreme Effects & Animations
+- Add extremely impressive effects and animations (multiply by 10) to make it look stunning!
+- Focus on hover effects, background animations, micro-interactions, and parallax.
+
+## After saving all files
+1. Update `version` in `package.json` to `1.48.0`
+2. Update `<title>` and meta tags in `index.html` as specified above
+3. Run: `pnpm build`
+4. If build succeeds → write `done` to `scripts/build-done.flag`
+5. If build fails with TypeScript errors → fix them and rebuild
+
+```
